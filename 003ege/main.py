@@ -1,10 +1,5 @@
-def factorial(n):
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
-    else:
-        return factorial(n - 1) * n
+a: dict = {1: "salad",
+           2: "nigger",
+           3: "ovosh"}
 
-
-print(factorial(35))
+print(**a)
