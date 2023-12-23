@@ -3,3 +3,5 @@ a: dict = {1: "salad",
            3: "ovosh"}
 
 print(**a)
+
+print("123piska")
