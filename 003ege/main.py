@@ -1,5 +1,4 @@
-from itertools import permutations, product
-
+from itertools import product
 
 def check(num: tuple[int]) -> bool:
     for i in range(len(num) - 1):
@@ -10,12 +9,10 @@ def check(num: tuple[int]) -> bool:
 
 
 counter: int = 0
-for i in product([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], repeat=3):
+for i in product([0, 1, 2, 3, 4, 5], repeat=5):
     if i[0] != 0:
-        if len(set(i)) == len(i):
-            if check(i):
-                print(i)
-                counter += 1
-
+        if check(i):
+            counter += 1
 
 print(counter)
+
