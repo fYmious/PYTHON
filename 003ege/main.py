@@ -1,18 +1,11 @@
-from itertools import product
-
-def check(num: tuple[int]) -> bool:
-    for i in range(len(num) - 1):
-        if (num[i] + num[i + 1]) % 2 == 0:
-            return False
-
-    return True
-
+from itertools import permutations
 
 counter: int = 0
-for i in product([0, 1, 2, 3, 4, 5], repeat=5):
-    if i[0] != 0:
-        if check(i):
-            counter += 1
+for i in set(permutations("ВОДОПАД")):
+    word = ''.join(i)
+    for l in "ОА": word = word.replace(l, '1')
+    if "11" not in word:
+        counter += 1
 
 print(counter)
 
