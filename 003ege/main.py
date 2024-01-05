@@ -1,10 +1,7 @@
-def f(n, a, b):
-    x = 9 + n * (a + 11) - 58
-    y = -10 + n * (b + 9) - 18
-    return x == 0 and y == 0
 
+x = 1
+num1 = 3 * 9 ** (x ** 2 - 2 * x)
+num2 = 84 * 12 ** (x ** 2 - 2 * x - 1)
+num3 = 4 * 16 ** (x ** 2 - 2 * x)
 
-for n in range(1000):
-    if any([f(n, a, b) for a in range(-150, 150) for b in range(-150, 150)]):
-        print(n)
-        break
+print(num1 - num2 + num3 == 0)
