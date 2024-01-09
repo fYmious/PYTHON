@@ -1,7 +1,13 @@
+def f(s, m):
+    if s >= 13: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s + 2, m - 1), f(s + 5, m - 1)]
+    return any(h) if (m - 1) % 2 == 0 else all(h)
 
-x = 1
-num1 = 3 * 9 ** (x ** 2 - 2 * x)
-num2 = 84 * 12 ** (x ** 2 - 2 * x - 1)
-num3 = 4 * 16 ** (x ** 2 - 2 * x)
+print("П1", [s for s in range(13) if f(s, 1)])
+print("В1", [s for s in range(13) if f(s, 2)])
+print("П2", [s for s in range(13) if f(s, 3)])
+print("В2", [s for s in range(13) if f(s, 4)])
+print("П3", [s for s in range(13) if f(s, 5)])
+print("В3", [s for s in range(13) if f(s, 6)])
 
-print(num1 - num2 + num3 == 0)
